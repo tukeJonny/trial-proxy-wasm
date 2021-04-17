@@ -83,8 +83,8 @@ impl<'a> RateLimitFilter {
 
         match limiter.add_limit(&limitador::limit::Limit::new(
             "ratelimitfilter",
-            3, // カウンタの最大値
-            20, // 20秒ごと
+            3,
+            20,
             vec!["req.method == GET"],
             vec!["req.headers.x-user-id"],
         )) {
