@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  envoy:
+    image: envoyproxy/envoy:v1.17.0
+    command: envoy -c /etc/envoy.yaml
+    volumes:
+      - "./envoy/envoy.yaml:/etc/envoy.yaml:ro"
+      - "./target/wasm32-unknown-unknown/release/ratelimitfilter.wasm:/etc/ratelimitfilter.wasm"
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+
+  nginx:
+    image: nginx:latest

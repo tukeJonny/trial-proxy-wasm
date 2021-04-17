@@ -1,0 +1,17 @@
+[package]
+name = "trial_proxywasm"
+version = "0.1.0"
+authors = ["tukeJonny <ne250143@yahoo.co.jp>"]
+edition = "2018"
+
+[lib]
+name = "ratelimitfilter"
+crate-type = ["cdylib"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+proxy-wasm = "0.1.0"
+log = "0.4"
+bincode = "1.2"
+serde = "1.0"
+limitador = { version = "0.1.3", default-features = false }
